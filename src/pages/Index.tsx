@@ -172,34 +172,196 @@ const GALLERY = [
   },
 ];
 
-const MATERIALS = [
+type MaterialContent =
+  | { type: "document"; sections: { heading: string; text: string }[] }
+  | { type: "journal"; issues: { num: string; title: string; theme: string; articles: string[] }[] }
+  | { type: "videos"; items: { title: string; speaker: string; duration: string; desc: string }[] }
+  | { type: "questionnaire"; blocks: { title: string; questions: { q: string; options?: string[]; type: "radio" | "checkbox" | "text" | "scale" }[] }[] };
+
+const MATERIALS: { icon: string; title: string; desc: string; tag: string; content: MaterialContent }[] = [
   {
     icon: "FileText",
     title: "ФГОС ДО — официальный текст",
     desc: "Федеральный государственный образовательный стандарт дошкольного образования",
-    link: "#",
     tag: "Документ",
+    content: {
+      type: "document",
+      sections: [
+        {
+          heading: "I. Общие положения",
+          text: "Федеральный государственный образовательный стандарт дошкольного образования (далее — Стандарт) является совокупностью обязательных требований к дошкольному образованию. Стандарт направлен на достижение следующих целей: повышение социального статуса дошкольного образования; обеспечение государством равенства возможностей для каждого ребёнка в получении качественного дошкольного образования; обеспечение государственных гарантий уровня и качества дошкольного образования.",
+        },
+        {
+          heading: "II. Требования к условиям реализации программы",
+          text: "Стандарт устанавливает требования к психолого-педагогическим, кадровым, материально-техническим и финансовым условиям реализации Программы. Психолого-педагогические условия включают: уважение взрослых к человеческому достоинству детей; использование форм и методов работы с детьми, соответствующих их возрастным и индивидуальным особенностям; построение образовательной деятельности на основе взаимодействия взрослых с детьми.",
+        },
+        {
+          heading: "III. Взаимодействие с семьёй (п. 3.2.1)",
+          text: "Для успешной реализации Программы должны быть обеспечены следующие условия: взаимодействие с родителями (законными представителями) по вопросам образования ребёнка, непосредственного вовлечения их в образовательную деятельность, в том числе посредством создания образовательных проектов совместно с семьёй на основе выявления потребностей и поддержки образовательных инициатив семьи.",
+        },
+        {
+          heading: "IV. Требования к результатам освоения программы",
+          text: "Требования к результатам освоения Программы представлены в виде целевых ориентиров дошкольного образования, которые представляют собой социально-нормативные возрастные характеристики возможных достижений ребёнка на этапе завершения уровня дошкольного образования. Целевые ориентиры не подлежат непосредственной оценке, в том числе в виде педагогической диагностики, и не являются основанием для их формального сравнения с реальными достижениями детей.",
+        },
+        {
+          heading: "V. Партнёрство с семьёй как принцип Стандарта",
+          text: "Стандарт основывается на принципе сотрудничества организации с семьёй. Организация обязана обеспечивать психолого-педагогическую поддержку семьи и повышение компетентности родителей в вопросах развития и образования, охраны и укрепления здоровья детей. Консультативная помощь родителям по вопросам воспитания и обучения детей должна быть доступной и бесплатной.",
+        },
+      ],
+    },
   },
   {
     icon: "Globe",
     title: "Журнал «Воспитатель ДОУ»",
     desc: "Профессиональное издание с практическими материалами для педагогов дошкольного образования",
-    link: "#",
     tag: "Издание",
+    content: {
+      type: "journal",
+      issues: [
+        {
+          num: "№ 3 / 2024",
+          title: "Нетрадиционные формы работы с семьёй",
+          theme: "Взаимодействие с родителями",
+          articles: [
+            "«Родительский клуб как пространство диалога» — опыт МБДОУ «Радуга», Воронеж",
+            "«Семейный театр в детском саду: как вовлечь папу» — методические рекомендации",
+            "«Педагогическая гостиная: сценарий первой встречи» — готовый план проведения",
+            "«Как справиться с тревожным родителем» — советы педагога-психолога",
+          ],
+        },
+        {
+          num: "№ 1 / 2024",
+          title: "Цифровые инструменты в работе с семьёй",
+          theme: "Цифровизация ДОУ",
+          articles: [
+            "«Мессенджеры как инструмент педагога: правила и границы»",
+            "«Электронное портфолио ребёнка: как создать и вести»",
+            "«Онлайн-собрание: технические советы и педагогические лайфхаки»",
+            "«Видеодневник группы: опыт трёх детских садов»",
+          ],
+        },
+        {
+          num: "№ 5 / 2023",
+          title: "Проектная деятельность: семья как участник",
+          theme: "Совместные проекты",
+          articles: [
+            "«Семейный проект \u00abМоя профессия\u00bb: от идеи до выставки»",
+            "«Как организовать мини-исследование дома: памятка для родителей»",
+            "«Совместное создание книги группы: пошаговый алгоритм»",
+            "«Оценка эффективности проектной деятельности с семьёй»",
+          ],
+        },
+        {
+          num: "№ 9 / 2023",
+          title: "Трудные ситуации во взаимодействии с родителями",
+          theme: "Сложные случаи",
+          articles: [
+            "«Родитель против педагога: как выйти из конфликта»",
+            "«Семья в кризисе: тактика поведения воспитателя»",
+            "«Когда родитель не приходит: альтернативные каналы связи»",
+            "«Юридические аспекты взаимодействия ДОУ с семьёй»",
+          ],
+        },
+      ],
+    },
   },
   {
     icon: "Video",
     title: "Видеолекции ФИРО",
     desc: "Открытые лекции Федерального института развития образования по вопросам взаимодействия с семьёй",
-    link: "#",
     tag: "Видео",
+    content: {
+      type: "videos",
+      items: [
+        {
+          title: "Партнёрство ДОУ и семьи: от теории к практике",
+          speaker: "д.п.н. Т.В. Волосовец, директор ФИРО",
+          duration: "1 ч 12 мин",
+          desc: "Обзорная лекция о современных подходах к организации взаимодействия детского сада с семьёй. Рассматриваются ключевые принципы партнёрства, типичные ошибки педагогов и эффективные модели сотрудничества.",
+        },
+        {
+          title: "Нетрадиционные формы работы с родителями в условиях ФГОС ДО",
+          speaker: "к.п.н. О.А. Скоролупова, зам. директора ФИРО",
+          duration: "58 мин",
+          desc: "Практическая лекция с разбором конкретных форм: родительский клуб, педагогическая гостиная, семейные мастерские. Примеры из практики ДОУ разных регионов России.",
+        },
+        {
+          title: "Психологические основы взаимодействия педагога с родителями",
+          speaker: "к.психол.н. И.Е. Валитова, ведущий научный сотрудник ФИРО",
+          duration: "1 ч 05 мин",
+          desc: "Лекция о психологических барьерах в общении педагогов и родителей, техниках активного слушания, установлении доверительного контакта с семьёй.",
+        },
+        {
+          title: "Цифровые форматы взаимодействия с семьёй: возможности и риски",
+          speaker: "к.п.н. А.В. Микляева, старший научный сотрудник ФИРО",
+          duration: "44 мин",
+          desc: "Разбор цифровых инструментов: мессенджеры, электронные дневники, видеоконференции. Правовые аспекты, этические нормы и практические рекомендации по внедрению.",
+        },
+        {
+          title: "Работа с «трудными» родителями: стратегии и техники",
+          speaker: "д.психол.н. Н.Е. Веракса, научный руководитель ФИРО",
+          duration: "1 ч 20 мин",
+          desc: "Разбор сложных ситуаций: конфликтный родитель, безразличный родитель, гиперопекающий родитель. Конкретные скрипты разговора и стратегии поведения педагога.",
+        },
+      ],
+    },
   },
   {
     icon: "Download",
     title: "Шаблон анкеты для родителей",
     desc: "Готовый бланк диагностики запросов и предпочтений семей для выбора форм взаимодействия",
-    link: "#",
     tag: "Шаблон",
+    content: {
+      type: "questionnaire",
+      blocks: [
+        {
+          title: "Блок 1. Общая информация",
+          questions: [
+            { q: "Ваша роль в семье", options: ["Мама", "Папа", "Бабушка / дедушка", "Другой законный представитель"], type: "radio" },
+            { q: "Возраст вашего ребёнка", options: ["2–3 года", "3–4 года", "4–5 лет", "5–6 лет", "6–7 лет"], type: "radio" },
+            { q: "Ваша занятость", options: ["Работаю полный день", "Работаю неполный день / удалённо", "Не работаю", "Другое"], type: "radio" },
+          ],
+        },
+        {
+          title: "Блок 2. Интересующие темы",
+          questions: [
+            {
+              q: "Какие темы вам наиболее актуальны? (выберите все подходящие)",
+              options: ["Развитие речи и общения", "Подготовка к школе", "Детские конфликты и агрессия", "Режим дня и сон", "Питание и здоровье", "Тревожность и страхи", "Отношения между детьми в семье", "Гаджеты и экранное время"],
+              type: "checkbox",
+            },
+          ],
+        },
+        {
+          title: "Блок 3. Предпочитаемые форматы",
+          questions: [
+            {
+              q: "Какие форматы встреч вам подходят? (выберите все подходящие)",
+              options: ["Групповые встречи в ДОУ", "Индивидуальные консультации", "Онлайн-консультации", "Мастер-классы вместе с ребёнком", "Лекции с приглашёнными специалистами", "Неформальные клубные встречи", "Выезды и семейные мероприятия"],
+              type: "checkbox",
+            },
+            {
+              q: "Удобное время для встреч",
+              options: ["Утром (до 9:00)", "Днём (12:00–15:00)", "Вечером в будни (17:00–19:00)", "Вечером в будни (19:00–21:00)", "В выходные дни"],
+              type: "checkbox",
+            },
+            {
+              q: "Оптимальная продолжительность встречи",
+              options: ["До 30 минут", "30–60 минут", "1–1,5 часа", "Более 1,5 часа"],
+              type: "radio",
+            },
+          ],
+        },
+        {
+          title: "Блок 4. Ваш опыт и пожелания",
+          questions: [
+            { q: "Насколько вы удовлетворены текущим общением с педагогами? (1 — совсем нет, 5 — полностью)", options: ["1", "2", "3", "4", "5"], type: "scale" },
+            { q: "Готовы ли вы сами выступить на встрече и поделиться опытом?", options: ["Да, с удовольствием", "Возможно, если тема близкая", "Нет, предпочитаю слушать"], type: "radio" },
+            { q: "Ваши пожелания и предложения педагогам (свободный ответ)", type: "text" },
+          ],
+        },
+      ],
+    },
   },
 ];
 
@@ -232,6 +394,7 @@ export default function Index() {
   const [galleryOpen, setGalleryOpen] = useState<number | null>(null);
   const [formSent, setFormSent] = useState(false);
   const [activeForm, setActiveForm] = useState<number | null>(null);
+  const [activeMaterial, setActiveMaterial] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-[#FAF6F0] warm-texture font-body">
@@ -643,10 +806,10 @@ export default function Index() {
 
           <div className="grid sm:grid-cols-2 gap-5">
             {MATERIALS.map((m, i) => (
-              <a
+              <button
                 key={i}
-                href={m.link}
-                className="flex gap-4 p-6 bg-white rounded-2xl border border-[#E5D5C5] card-hover group"
+                onClick={() => setActiveMaterial(i)}
+                className="flex gap-4 p-6 bg-white rounded-2xl border border-[#E5D5C5] card-hover group text-left w-full hover:border-[#5A7A6A]/40 transition-colors"
               >
                 <div className="w-12 h-12 bg-[#5A7A6A]/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-[#5A7A6A]/20 transition-colors">
                   <Icon name={m.icon} fallback="CircleAlert" size={22} className="text-[#5A7A6A]" />
@@ -656,10 +819,12 @@ export default function Index() {
                     <h3 className="font-semibold text-[#5C3D2E] group-hover:text-[#C4622D] transition-colors">{m.title}</h3>
                     <span className="shrink-0 text-xs bg-[#E5D5C5] text-[#5C3D2E]/70 px-2 py-0.5 rounded-full">{m.tag}</span>
                   </div>
-                  <p className="text-sm text-[#5C3D2E]/60 leading-relaxed">{m.desc}</p>
+                  <p className="text-sm text-[#5C3D2E]/60 leading-relaxed mb-3">{m.desc}</p>
+                  <div className="inline-flex items-center gap-1.5 text-xs font-medium text-[#5A7A6A] opacity-70 group-hover:opacity-100 transition-opacity">
+                    Открыть <Icon name="ArrowRight" size={13} className="text-[#5A7A6A]" />
+                  </div>
                 </div>
-                <Icon name="ExternalLink" size={16} className="text-[#5C3D2E]/30 group-hover:text-[#C4622D] transition-colors shrink-0 mt-1" />
-              </a>
+              </button>
             ))}
           </div>
         </div>
@@ -760,6 +925,129 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Material modal */}
+      {activeMaterial !== null && (() => {
+        const mat = MATERIALS[activeMaterial];
+        const c = mat.content;
+        return (
+          <div
+            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
+            onClick={() => setActiveMaterial(null)}
+          >
+            <div
+              className="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl animate-scale-in"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="flex items-start justify-between p-6 border-b border-[#E5D5C5] shrink-0">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#5A7A6A]/10 rounded-xl flex items-center justify-center">
+                    <Icon name={mat.icon} fallback="CircleAlert" size={20} className="text-[#5A7A6A]" />
+                  </div>
+                  <div>
+                    <span className="text-xs bg-[#E5D5C5] text-[#5C3D2E]/70 px-2 py-0.5 rounded-full">{mat.tag}</span>
+                    <h2 className="font-display text-xl font-semibold text-[#5C3D2E] mt-0.5">{mat.title}</h2>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setActiveMaterial(null)}
+                  className="w-9 h-9 bg-[#FAF6F0] hover:bg-[#E5D5C5] rounded-full flex items-center justify-center transition-colors shrink-0 ml-3"
+                >
+                  <Icon name="X" size={16} className="text-[#5C3D2E]" />
+                </button>
+              </div>
+
+              {/* Scrollable content */}
+              <div className="overflow-y-auto p-6 space-y-6">
+                {c.type === "document" && c.sections.map((s, idx) => (
+                  <div key={idx}>
+                    <h3 className="font-semibold text-[#5C3D2E] mb-2 flex items-center gap-2">
+                      <span className="w-6 h-6 bg-[#C4622D]/10 text-[#C4622D] rounded-full flex items-center justify-center text-xs font-bold shrink-0">{idx + 1}</span>
+                      {s.heading}
+                    </h3>
+                    <p className="text-sm text-[#5C3D2E]/70 leading-relaxed pl-8">{s.text}</p>
+                  </div>
+                ))}
+
+                {c.type === "journal" && c.issues.map((issue, idx) => (
+                  <div key={idx} className="rounded-xl border border-[#E5D5C5] overflow-hidden">
+                    <div className="bg-[#FAF6F0] px-5 py-3 flex items-center justify-between">
+                      <div>
+                        <span className="text-xs text-[#5A7A6A] font-medium">{issue.num} · {issue.theme}</span>
+                        <h3 className="font-semibold text-[#5C3D2E] mt-0.5">{issue.title}</h3>
+                      </div>
+                      <Icon name="BookOpen" size={18} className="text-[#5A7A6A] shrink-0" />
+                    </div>
+                    <ul className="px-5 py-4 space-y-2">
+                      {issue.articles.map((a, ai) => (
+                        <li key={ai} className="flex gap-2 text-sm text-[#5C3D2E]/70">
+                          <span className="text-[#C4622D] mt-0.5 shrink-0">—</span>
+                          {a}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+
+                {c.type === "videos" && c.items.map((v, idx) => (
+                  <div key={idx} className="flex gap-4 p-4 rounded-xl border border-[#E5D5C5] bg-[#FAF6F0]">
+                    <div className="w-12 h-12 bg-[#C4622D]/10 rounded-xl flex items-center justify-center shrink-0">
+                      <Icon name="PlayCircle" size={22} className="text-[#C4622D]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-2 mb-1">
+                        <h3 className="font-semibold text-[#5C3D2E] text-sm leading-snug">{v.title}</h3>
+                        <span className="shrink-0 text-xs bg-white border border-[#E5D5C5] text-[#5C3D2E]/60 px-2 py-0.5 rounded-full">{v.duration}</span>
+                      </div>
+                      <p className="text-xs text-[#5A7A6A] mb-1.5 font-medium">{v.speaker}</p>
+                      <p className="text-xs text-[#5C3D2E]/65 leading-relaxed">{v.desc}</p>
+                    </div>
+                  </div>
+                ))}
+
+                {c.type === "questionnaire" && c.blocks.map((block, bi) => (
+                  <div key={bi}>
+                    <h3 className="font-semibold text-[#5C3D2E] text-sm mb-3 flex items-center gap-2">
+                      <span className="w-6 h-6 bg-[#5A7A6A]/10 text-[#5A7A6A] rounded-full flex items-center justify-center text-xs font-bold shrink-0">{bi + 1}</span>
+                      {block.title}
+                    </h3>
+                    <div className="space-y-4 pl-8">
+                      {block.questions.map((question, qi) => (
+                        <div key={qi} className="rounded-xl border border-[#E5D5C5] p-4 bg-[#FAF6F0]">
+                          <p className="text-sm font-medium text-[#5C3D2E] mb-3">{question.q}</p>
+                          {question.type === "text" && (
+                            <div className="w-full h-16 rounded-lg border border-[#E5D5C5] bg-white px-3 py-2 text-xs text-[#5C3D2E]/40 flex items-start">
+                              Место для ответа родителя...
+                            </div>
+                          )}
+                          {question.type === "scale" && question.options && (
+                            <div className="flex gap-2">
+                              {question.options.map((o) => (
+                                <div key={o} className="w-9 h-9 rounded-full border-2 border-[#E5D5C5] bg-white flex items-center justify-center text-sm font-semibold text-[#5C3D2E]/50">{o}</div>
+                              ))}
+                            </div>
+                          )}
+                          {(question.type === "radio" || question.type === "checkbox") && question.options && (
+                            <div className="space-y-1.5">
+                              {question.options.map((o) => (
+                                <div key={o} className="flex items-center gap-2.5 text-sm text-[#5C3D2E]/75">
+                                  <div className={`w-4 h-4 border-2 border-[#E5D5C5] bg-white shrink-0 ${question.type === "radio" ? "rounded-full" : "rounded"}`} />
+                                  {o}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      })()}
 
       {/* FOOTER */}
       <footer className="bg-[#5C3D2E] text-white/70 py-10">
