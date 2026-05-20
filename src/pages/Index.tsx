@@ -847,9 +847,9 @@ export default function Index() {
               </p>
               <div className="space-y-4">
                 {[
-                  { icon: "Mail", label: "Электронная почта", val: "info@most-dou.ru" },
-                  { icon: "Phone", label: "Телефон", val: "+7 (800) 555-00-00" },
-                  { icon: "MapPin", label: "Адрес", val: "Москва, Россия" },
+                  { icon: "Mail", label: "Электронная почта", val: "dsad44@kopeysk-uo.ru" },
+                  { icon: "Phone", label: "Телефон", val: "+7 (351) 393-63-22" },
+                  { icon: "MapPin", label: "Адрес", val: "Россия, Копейск, ул. Борьбы, д. 25А" },
                 ].map((c) => (
                   <div key={c.label} className="flex items-center gap-4">
                     <div className="w-10 h-10 bg-[#C4622D]/10 rounded-xl flex items-center justify-center shrink-0">
