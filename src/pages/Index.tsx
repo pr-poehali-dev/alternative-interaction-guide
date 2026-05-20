@@ -17,36 +17,84 @@ const FORMS = [
     title: "Родительские клубы",
     desc: "Неформальные встречи, где родители обмениваются опытом, обсуждают вопросы воспитания и находят единомышленников.",
     color: "terra",
+    howItWorks: [
+      "Встречи проходят раз в месяц в удобное вечернее время — обычно в 18:00–19:30.",
+      "Каждое заседание посвящено одной теме: детские конфликты, режим дня, подготовка к школе и другие актуальные вопросы.",
+      "Формат — живое обсуждение в небольшом кругу (8–15 человек), без оценок и лекций.",
+      "По итогам встречи педагог формирует краткую «памятку» с выводами и рекомендациями.",
+    ],
+    howToJoin: "Обратитесь к воспитателю вашей группы или старшему воспитателю ДОУ. В обращении укажите название детского сада, номер группы и имя ребёнка. Запись открывается за 2 недели до встречи.",
+    contact: "Воспитатель группы или старший воспитатель",
   },
   {
     icon: "Calendar",
     title: "Семейные мастерские",
     desc: "Совместные творческие занятия детей и родителей под руководством педагога: лепка, рисование, конструирование.",
     color: "sage",
+    howItWorks: [
+      "Мастерские проводятся по выходным — обычно в субботу с 10:00 до 12:00.",
+      "Ребёнок и родитель вместе выполняют творческое задание: создают поделку, рисуют, конструируют.",
+      "Педагог направляет процесс, объясняет технику и помогает — без оценок и соревнований.",
+      "Готовые работы остаются в семье или украшают выставку в группе.",
+    ],
+    howToJoin: "Запись ведёт педагог группы. Напишите ему лично или через чат группы. Укажите название детского сада, группу и имя ребёнка, а также удобные даты. Количество мест ограничено — обычно 6–8 семей.",
+    contact: "Педагог вашей группы",
   },
   {
     icon: "BookOpen",
     title: "Педагогическая гостиная",
     desc: "Тематические встречи с приглашёнными специалистами — психологами, логопедами, педагогами.",
     color: "gold",
+    howItWorks: [
+      "Встречи проходят раз в квартал в актовом зале или методическом кабинете ДОУ.",
+      "Приглашённый специалист (психолог, логопед, нейропсихолог) делает короткий доклад — 20–30 минут.",
+      "Затем следует открытая сессия вопросов и ответов.",
+      "Родители получают раздаточный материал с практическими советами по теме встречи.",
+    ],
+    howToJoin: "Обратитесь к методисту или заведующей ДОУ. В обращении укажите полное название детского сада и ваше имя. Регистрация открывается за 10 дней, участие бесплатное.",
+    contact: "Методист или заведующая ДОУ",
   },
   {
     icon: "Smartphone",
     title: "Цифровые форматы",
     desc: "Онлайн-консультации, родительские чаты, видеозаписи занятий — взаимодействие без привязки к расписанию.",
     color: "terra",
+    howItWorks: [
+      "Педагог публикует короткие видео из жизни группы и краткие советы в закрытом чате.",
+      "Раз в месяц проводится онлайн-консультация через видеозвонок — 30–40 минут, по предварительной записи.",
+      "Родители могут задавать вопросы в чате в удобное время — ответ приходит в течение суток.",
+      "Фотоальбомы занятий обновляются еженедельно в закрытом доступе для семей группы.",
+    ],
+    howToJoin: "Попросите воспитателя добавить вас в закрытый чат группы. Для записи на онлайн-консультацию напишите педагогу, указав название детского сада, группу и удобное время.",
+    contact: "Воспитатель группы (через мессенджер или лично)",
   },
   {
     icon: "Heart",
     title: "Дни открытых дверей",
     desc: "Родители присутствуют на занятиях, наблюдают за развитием ребёнка, общаются с педагогами в живой обстановке.",
     color: "sage",
+    howItWorks: [
+      "Проводятся 2–3 раза в год — даты утверждаются в начале учебного года.",
+      "Родитель приходит на утреннее занятие (9:00–10:30) и наблюдает за ребёнком в привычной обстановке.",
+      "После занятия педагог уделяет 10–15 минут для индивидуального разговора с каждой семьёй.",
+      "Посещение строго по предварительной записи — не более 2 гостей от одной семьи.",
+    ],
+    howToJoin: "Запись открывает воспитатель группы за 2 недели до мероприятия. Обратитесь к нему лично или через чат, укажите название детского сада, номер группы и имя ребёнка.",
+    contact: "Воспитатель группы",
   },
   {
     icon: "Star",
     title: "Проектная деятельность",
     desc: "Семья включается в образовательные проекты группы: исследования, коллекции, совместные выставки.",
     color: "gold",
+    howItWorks: [
+      "Проект длится 2–4 недели и объединяет несколько семей вокруг одной темы (например, «Профессии», «Мой город», «Природа»).",
+      "Семья получает задание: собрать материалы, провести мини-исследование дома с ребёнком, создать поделку или презентацию.",
+      "В финале проекта устраивается выставка или презентация в группе — дети рассказывают о своей работе.",
+      "Педагог координирует процесс, помогает с идеями и объединяет результаты в общий продукт группы.",
+    ],
+    howToJoin: "Сообщите воспитателю о желании участвовать в следующем проекте. Укажите название детского сада и группу. Педагог включит вас в список и выдаст задание в начале проекта.",
+    contact: "Воспитатель группы или педагог дополнительного образования",
   },
 ];
 
@@ -158,6 +206,7 @@ export default function Index() {
   const active = useScrollSpy();
   const [galleryOpen, setGalleryOpen] = useState<number | null>(null);
   const [formSent, setFormSent] = useState(false);
+  const [activeForm, setActiveForm] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-[#FAF6F0] warm-texture font-body">
@@ -344,20 +393,27 @@ export default function Index() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {FORMS.map((form, i) => {
-              const colorMap: Record<string, { bg: string; icon: string; border: string }> = {
-                terra: { bg: "bg-[#C4622D]/10", icon: "text-[#C4622D]", border: "border-[#C4622D]/15" },
-                sage: { bg: "bg-[#5A7A6A]/10", icon: "text-[#5A7A6A]", border: "border-[#5A7A6A]/15" },
-                gold: { bg: "bg-[#D4A853]/15", icon: "text-[#A07820]", border: "border-[#D4A853]/25" },
+              const colorMap: Record<string, { bg: string; icon: string; border: string; hover: string }> = {
+                terra: { bg: "bg-[#C4622D]/10", icon: "text-[#C4622D]", border: "border-[#C4622D]/15", hover: "hover:border-[#C4622D]/40 hover:bg-[#FFF8F5]" },
+                sage: { bg: "bg-[#5A7A6A]/10", icon: "text-[#5A7A6A]", border: "border-[#5A7A6A]/15", hover: "hover:border-[#5A7A6A]/40 hover:bg-[#F5FAF7]" },
+                gold: { bg: "bg-[#D4A853]/15", icon: "text-[#A07820]", border: "border-[#D4A853]/25", hover: "hover:border-[#D4A853]/50 hover:bg-[#FFFBF2]" },
               };
               const c = colorMap[form.color];
               return (
-                <div key={i} className={`bg-white rounded-2xl p-6 border ${c.border} card-hover`}>
+                <button
+                  key={i}
+                  onClick={() => setActiveForm(i)}
+                  className={`text-left bg-white rounded-2xl p-6 border ${c.border} ${c.hover} card-hover transition-colors w-full group`}
+                >
                   <div className={`w-12 h-12 ${c.bg} rounded-xl flex items-center justify-center mb-4`}>
                     <Icon name={form.icon} fallback="CircleAlert" size={22} className={c.icon} />
                   </div>
                   <h3 className="font-display text-xl font-semibold text-[#5C3D2E] mb-2">{form.title}</h3>
-                  <p className="text-sm text-[#5C3D2E]/65 leading-relaxed">{form.desc}</p>
-                </div>
+                  <p className="text-sm text-[#5C3D2E]/65 leading-relaxed mb-4">{form.desc}</p>
+                  <div className={`inline-flex items-center gap-1.5 text-xs font-medium ${c.icon} opacity-70 group-hover:opacity-100 transition-opacity`}>
+                    Подробнее <Icon name="ArrowRight" size={13} className={c.icon} />
+                  </div>
+                </button>
               );
             })}
           </div>
@@ -440,6 +496,74 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Form detail modal */}
+      {activeForm !== null && (() => {
+        const form = FORMS[activeForm];
+        const colorMap: Record<string, { bg: string; icon: string; accent: string; tag: string }> = {
+          terra: { bg: "bg-[#C4622D]/10", icon: "text-[#C4622D]", accent: "#C4622D", tag: "bg-[#C4622D]/10 text-[#C4622D]" },
+          sage: { bg: "bg-[#5A7A6A]/10", icon: "text-[#5A7A6A]", accent: "#5A7A6A", tag: "bg-[#5A7A6A]/10 text-[#5A7A6A]" },
+          gold: { bg: "bg-[#D4A853]/15", icon: "text-[#A07820]", accent: "#A07820", tag: "bg-[#D4A853]/15 text-[#A07820]" },
+        };
+        const c = colorMap[form.color];
+        return (
+          <div
+            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
+            onClick={() => setActiveForm(null)}
+          >
+            <div
+              className="bg-white rounded-2xl max-w-lg w-full shadow-2xl animate-scale-in overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-7 pb-0">
+                <div className="flex items-start justify-between mb-5">
+                  <div className={`w-12 h-12 ${c.bg} rounded-xl flex items-center justify-center`}>
+                    <Icon name={form.icon} fallback="CircleAlert" size={22} className={c.icon} />
+                  </div>
+                  <button
+                    onClick={() => setActiveForm(null)}
+                    className="w-9 h-9 bg-[#FAF6F0] hover:bg-[#E5D5C5] rounded-full flex items-center justify-center transition-colors"
+                  >
+                    <Icon name="X" size={16} className="text-[#5C3D2E]" />
+                  </button>
+                </div>
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[#5C3D2E] mb-2">{form.title}</h2>
+                <p className="text-[#5C3D2E]/65 text-sm leading-relaxed mb-6">{form.desc}</p>
+
+                <div className="mb-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Icon name="PlayCircle" size={16} className={c.icon} />
+                    <span className="text-xs font-semibold text-[#5C3D2E] uppercase tracking-wide">Как проходит</span>
+                  </div>
+                  <ul className="space-y-2.5">
+                    {form.howItWorks.map((step, idx) => (
+                      <li key={idx} className="flex gap-3 text-sm text-[#5C3D2E]/75 leading-relaxed">
+                        <span className={`shrink-0 w-5 h-5 rounded-full ${c.bg} ${c.icon} flex items-center justify-center text-xs font-semibold mt-0.5`}>
+                          {idx + 1}
+                        </span>
+                        {step}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mx-7 mb-7 rounded-xl bg-[#FAF6F0] border border-[#E5D5C5] p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <Icon name="UserCheck" size={15} className="text-[#C4622D]" />
+                  <span className="text-xs font-semibold text-[#5C3D2E] uppercase tracking-wide">Как записаться</span>
+                </div>
+                <p className="text-sm text-[#5C3D2E]/75 leading-relaxed mb-3">{form.howToJoin}</p>
+                <div className="flex items-center gap-2 pt-2 border-t border-[#E5D5C5]">
+                  <Icon name="Phone" size={13} className="text-[#5A7A6A]" />
+                  <span className="text-xs text-[#5C3D2E]/60">К кому обратиться: </span>
+                  <span className="text-xs font-medium text-[#5C3D2E]">{form.contact}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Gallery modal */}
       {galleryOpen !== null && (
