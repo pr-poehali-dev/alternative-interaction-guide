@@ -153,19 +153,19 @@ const RECOMMENDATIONS = [
 
 const GALLERY = [
   {
-    img: "https://cdn.poehali.dev/projects/e62eb3d6-d0a3-48aa-be67-c4d2e5462dee/files/0c44d6c7-ad03-454f-883a-ed4c047ac7c2.jpg",
+    img: "https://cdn.poehali.dev/projects/e62eb3d6-d0a3-48aa-be67-c4d2e5462dee/files/d63dc655-7757-4c03-be4b-831ae81e3843.jpg",
     title: "Педагогическая гостиная",
     tag: "Совместная работа",
     desc: "Педагоги и родители группы «Звёздочки» обсуждают образовательные маршруты детей в уютной атмосфере.",
   },
   {
-    img: "https://cdn.poehali.dev/projects/e62eb3d6-d0a3-48aa-be67-c4d2e5462dee/files/2e8841b9-6465-46be-9bd0-7124c8cc478a.jpg",
+    img: "https://cdn.poehali.dev/projects/e62eb3d6-d0a3-48aa-be67-c4d2e5462dee/files/b172f418-671e-4f10-ac75-b2a0a8372192.jpg",
     title: "Семейная мастерская",
     tag: "Творчество",
     desc: "Дети и родители вместе создают поделки из природного материала — проект «Осенние дары».",
   },
   {
-    img: "https://cdn.poehali.dev/projects/e62eb3d6-d0a3-48aa-be67-c4d2e5462dee/files/ebbdaec7-fddd-4ef5-870f-e9b0a33f9044.jpg",
+    img: "https://cdn.poehali.dev/projects/e62eb3d6-d0a3-48aa-be67-c4d2e5462dee/files/0840c70d-0ab9-495d-b544-0f22b8f526d7.jpg",
     title: "Семейный праздник",
     tag: "Событие",
     desc: "День открытых дверей с подвижными играми на свежем воздухе объединил 15 семей.",
@@ -327,7 +327,7 @@ export default function Index() {
           <div className="relative animate-scale-in delay-200">
             <div className="absolute -top-4 -left-4 w-full h-full rounded-2xl bg-[#C4622D]/10 border-2 border-[#C4622D]/15" />
             <img
-              src="https://cdn.poehali.dev/projects/e62eb3d6-d0a3-48aa-be67-c4d2e5462dee/files/0c44d6c7-ad03-454f-883a-ed4c047ac7c2.jpg"
+              src="https://cdn.poehali.dev/projects/e62eb3d6-d0a3-48aa-be67-c4d2e5462dee/files/90f81ec7-9390-4392-bf28-cb4e645bfb41.jpg"
               alt="Взаимодействие педагогов и родителей"
               className="relative w-full h-[400px] object-cover rounded-2xl shadow-2xl shadow-[#5C3D2E]/15"
             />
